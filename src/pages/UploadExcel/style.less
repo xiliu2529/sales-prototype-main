@@ -1,0 +1,99 @@
+@import '~antd/es/style/themes/default.less';
+
+/* div-css */
+.div-class {
+  float: left;
+  width: fit-content;
+  margin: auto;
+  line-height: 25px;
+}
+
+.select {
+  width: 80px;
+  padding: 0 2px;
+  font-size: 12px;
+  text-align: left;
+}
+.formatSelect{
+  width: 150px;
+  padding: 0 2px;
+  font-size: 12px;
+  text-align: left;
+}
+
+.uploadExcelTopDiv{
+  position: relative;
+  left:100px;
+  width: 80%;
+}
+
+.uploadExcelLeftDiv{
+  left:100px;
+  float: left;
+  width: content-box;
+  margin-right: 5px;
+  color:#003D82;
+  font-weight: bold;
+  line-height: 40px;
+}
+
+.uploadExcelRightDiv{
+  float: left;
+  width: fit-content;
+  margin: auto;
+  line-height: 40px;
+}
+
+.boxUpload {
+  :global {
+    float: left;
+    margin: auto;
+    line-height: 40px;
+
+    .ant-upload.ant-upload-drag{
+      position: inherit;
+      display: inline-flex;
+      width:150px;
+      height: 35px;
+      margin-top:4px;
+    }
+
+    .ant-upload.ant-upload-drag .ant-upload{
+      padding: 0 0;
+    }
+
+    .ant-upload.ant-upload-drag p.ant-upload-drag-icon{
+      margin-bottom: 0;
+    }
+
+    .ant-upload.ant-upload-drag p.ant-upload-text{
+      margin:0 0;
+      font-size: 14px;
+    }
+
+    .ant-upload.ant-upload-drag .ant-upload-drag-container{
+      display: table-cell;
+    }
+
+    .ant-upload-list-item-name{
+      display: contents;
+    }
+
+    .ant-upload-list-text .ant-upload-text-icon .anticon {
+      left: -20px;
+    }
+    .ant-upload-list-text .ant-upload-list-item-card-actions,
+    .ant-upload-list-picture .ant-upload-list-item-card-actions {
+      position: static;
+      margin:0px 0px 0px 10px;
+    }
+  }
+}
+
+.TopCard{
+  :global {
+    .ant-card-body {
+      padding: 0;
+    }
+  }
+}

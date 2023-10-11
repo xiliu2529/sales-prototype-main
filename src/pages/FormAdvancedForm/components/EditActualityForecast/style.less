@@ -1,0 +1,701 @@
+@import '~antd/es/style/themes/default.less';
+
+.main {
+  width: 100%;
+  background: @component-background;
+}
+
+.topHeight {
+  height: 249px !important;
+}
+
+.DrawerStyle{
+  :global {
+    .ant-drawer-body {
+      padding: 20px;
+    }
+  }
+}
+
+.topTable {
+  :global {
+    .ant-table-container {
+      width: 97vw;
+      //width: 100%;
+    }
+
+    .ant-table {
+      font-size: 12px;
+      border-top: 1px solid #f2f2f2;
+      border-right: 1px solid #f2f2f2;
+      border-bottom: 1px solid #f2f2f2;
+      border-left: 1px solid #f2f2f2;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    /* table-right */
+    .ant-table-right {
+      border-right: 1px solid black;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+
+
+    /* 表头 */
+    .ant-table-thead > tr > th {
+      padding: 10px 5px;
+      color: #f0f8ff;
+      font-size: 14px;
+      line-height: 10px;
+      text-align: center;
+      background: #368dd9 !important;
+      border-right: 1px solid #e0e0e0;
+      border-bottom: 1px solid #e0e0e0;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    /* 表格内容 */
+    .ant-table-tbody > tr > td {
+      padding: 1px 2px;
+      line-height: 15px;
+      text-align: left;
+      border-right: 1px solid #e0e0e0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .table-color-odd-line {
+      background-color: #f0f0f0;
+    }
+
+    .table-color-even-line {
+      background-color: white;
+    }
+  }
+}
+
+.businessTable {
+  :global {
+    .ant-table-container {
+      width: 97vw;
+      //width: 100%;
+    }
+
+    .ant-table {
+      font-size: 12px;
+      border-top: 1px solid #f2f2f2;
+      border-right: 1px solid #f2f2f2;
+      border-bottom: 1px solid #f2f2f2;
+      border-left: 1px solid #f2f2f2;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    /* table-right */
+    .ant-table-right {
+      border-right: 1px solid black;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    /* 表头 */
+    .ant-table-thead > tr > th {
+      padding: 10px 5px;
+      color: #f0f8ff;
+      font-size: 14px;
+      line-height: 10px;
+      text-align: center;
+      background: #368dd9 !important;
+      border-right: 1px solid #e0e0e0;
+      border-bottom: 1px solid #e0e0e0;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    /* 表格内容 */
+    .ant-table-tbody > tr > td {
+      padding: 1px 2px;
+      line-height: 15px;
+      text-align: left;
+      border-right: 1px solid #e0e0e0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .ant-table-filter-trigger.active {
+      color: #003d82 !important;
+    }
+    .table-color-odd-line {
+      background-color: #f0f0f0;
+    }
+
+    .table-color-even-line {
+      background-color: white;
+    }
+  }
+}
+
+
+.budgetTable {
+  :global {
+    .ant-table-container {
+      width: 97vw;
+    }
+
+    .ant-table {
+      font-size: 12px;
+      border-top: 1px solid #f2f2f2;
+      border-right: 1px solid #f2f2f2;
+      border-bottom: 1px solid #f2f2f2;
+      border-left: 1px solid #f2f2f2;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    /* table-right */
+    .ant-table-right {
+      border-right: 1px solid black;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    /* 表头 */
+    .ant-table-thead > tr > th {
+      padding: 10px 5px;
+      color: #f0f8ff;
+      font-size: 14px;
+      line-height: 10px;
+      text-align: center;
+      background: #368dd9 !important;
+      border-right: 1px solid #e0e0e0;
+      border-bottom: 0px solid #e0e0e0 !important;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    /* 表格内容 */
+    .ant-table-tbody > tr > td {
+      padding: 1px 2px;
+      line-height: 15px;
+      text-align: center;
+      border-right: 1px solid #e0e0e0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .ant-table-filter-trigger.active {
+      color: #003d82 !important;
+    }
+    .table-color-odd-line {
+      background-color: #f0f0f0;
+    }
+
+    .table-color-even-line {
+      background-color: white;
+    }
+  }
+}
+
+.midTable {
+  :global {
+    .ant-table-container {
+      width: 97vw;
+    }
+
+    .ant-table {
+      font-size: 12px;
+      border-top: 1px solid #f2f2f2;
+      border-right: 1px solid #f2f2f2;
+      border-bottom: 1px solid #f2f2f2;
+      border-left: 1px solid #f2f2f2;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    /* 表头 */
+    .ant-table-thead > tr > th {
+      padding: 10px 10px;
+      color: black;
+      font-size: 14px;
+      line-height: 10px;
+      text-align: center;
+      background: white !important;
+      border-right: 1px solid #e0e0e0;
+      border-bottom: 1px solid #e0e0e0;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    /* 表格内容 */
+    .ant-table-tbody > tr > td {
+      padding: 0 0;
+      line-height: 25px;
+      text-align: right;
+      border-right: 1px solid #e0e0e0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+  }
+}
+
+.editableBottomTable {
+  :global {
+    .ant-table-container {
+      width: 98vw;
+    }
+
+    .ant-table {
+      font-size: 12px;
+      border-top: 1px solid #f2f2f2;
+      border-right: 1px solid #f2f2f2;
+      border-bottom: 1px solid #f2f2f2;
+      border-left: 1px solid #f2f2f2;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    /* table-right */
+    .ant-table-right {
+      border-right: 1px solid black;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    /* 表头 */
+    .ant-table-thead > tr > th {
+      padding: 10px 0px !important;
+      color: #f0f8ff;
+      font-size: 14px;
+      line-height: 10px;
+      text-align: center;
+      background: #368dd9 !important;
+      border-right: 1px solid #e0e0e0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    /* 表格内容 */
+    .ant-table-tbody > tr > td {
+      padding: 2px 2px !important;
+      line-height: 15px;
+      text-align: left;
+      border-right: 1px solid #e0e0e0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .ant-table-column-sorter-up.active {
+      color: #003d82 !important;
+    }
+    .ant-table-column-sorter-down.active {
+      color: #003d82 !important;
+    }
+
+    .ant-picker {
+      padding: 0 0;
+    }
+
+    .table-color-odd-line {
+      background-color: #f0f0f0;
+    }
+
+    .table-color-even-line {
+      background-color: white;
+    }
+  }
+}
+.diseditableBottomTable {
+  :global {
+    .ant-table-container {
+      width: 98vw;
+    }
+
+    .ant-table {
+      font-size: 12px;
+      border-top: 1px solid #f2f2f2;
+      border-right: 1px solid #f2f2f2;
+      border-bottom: 1px solid #f2f2f2;
+      border-left: 1px solid #f2f2f2;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    /* table-right */
+    .ant-table-right {
+      border-right: 1px solid black;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    /* 表头 */
+    .ant-table-thead > tr > th {
+      //padding: 0px 0px !important;
+      color: #f0f8ff;
+      font-size: 14px;
+      line-height: 10px;
+      text-align: center;
+      background: #368dd9 !important;
+      border-right: 1px solid #e0e0e0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    /* 表格内容 */
+    .ant-table-tbody > tr > td {
+      padding: 2px 2px !important;
+      line-height: 15px;
+      text-align: left;
+      border-right: 1px solid #e0e0e0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .ant-table-column-sorter-up.active {
+      color: #003d82 !important;
+    }
+    .ant-table-column-sorter-down.active {
+      color: #003d82 !important;
+    }
+    .ant-picker {
+      padding: 0 0;
+    }
+
+    .table-color-odd-line {
+      background-color: #f0f0f0;
+    }
+
+    .table-color-even-line {
+      background-color: white;
+    }
+  }
+}
+
+/* div-css */
+.div-class {
+  :global {
+    /* tabs */
+    .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab,
+    .ant-tabs-card > div > .ant-tabs-nav .ant-tabs-tab {
+      padding: 5px 16px;
+    }
+    .ant-tabs-top > .ant-tabs-nav,
+    .ant-tabs-bottom > .ant-tabs-nav,
+    .ant-tabs-top > div > .ant-tabs-nav,
+    .ant-tabs-bottom > div > .ant-tabs-nav {
+      margin: 0;
+    }
+
+    float: left;
+    width: fit-content;
+    margin: auto;
+    line-height: 25px;
+    border: #f2f2f2;
+  }
+}
+
+.addButton {
+  background: #368dd9 !important;
+}
+
+.batchEditSaveButton {
+  background: #368dd9 !important;
+}
+
+.select {
+  width: 100%;
+  padding: 0 0;
+  text-align: left;
+}
+
+.selectBatchEdit {
+  width: 100%;
+  padding: 0 0;
+  text-align: left;
+  font-size: 12px;
+}
+
+.amountDiv {
+  text-align: right;
+}
+
+.aBudgetDiv {
+  text-align: left;
+}
+
+.activitiesSearchItem{
+  //width: 150px !important;
+  width: 100% !important;
+}
+
+.noDiv {
+  text-align: center;
+}
+
+.amountInput {
+  width: 100%;
+  height: 32px;
+  padding: 0 0;
+  text-align: right;
+}
+
+.amountInputBatchEdit {
+  width: 100%;
+  height: 32px;
+  padding: 0 0;
+  text-align: right;
+  font-size: 12px;
+}
+
+.remarksInput {
+  width: 100%;
+  height: 32px;
+  padding: 0 0;
+  text-align: left;
+}
+
+.effortDiv {
+  text-align: right;
+}
+
+.effortInput {
+  width: 50%;
+  padding: 0 0;
+  line-height: 30px;
+  text-align: right;
+}
+
+.effortInputBatchEdit {
+  width: 50%;
+  padding: 0 0;
+  line-height: 30px;
+  text-align: right;
+  font-size: 12px;
+}
+
+.monthtInput {
+  width: 60%;
+  padding: 0 0;
+  text-align: right;
+}
+
+.midEffortInput {
+  width: 40%;
+  padding: 0 0;
+  text-align: right;
+}
+
+.effortSelect {
+  width: 50%;
+  padding: 0 0;
+  text-align: left;
+}
+
+.effortSelectBatchEdit {
+  width: 50%;
+  padding: 0 0;
+  text-align: left;
+  font-size: 12px;
+}
+
+.actionDiv {
+  text-align: center;
+}
+
+/* copyModel-css */
+.copyModel {
+  top: 45%;
+  left: 30%;
+  float: left;
+  margin: auto;
+}
+
+/* copyModel-css */
+.batchEditModel {
+  top: 2% !important;
+  left: -2%;
+  margin: auto;
+  :global {
+    .ant-modal-body {
+      padding-top: 10px !important;
+      background: #f2f2f2 !important;
+      padding: 10px !important;
+      width: 600px !important;
+      padding-bottom: 10px;
+    }
+  }
+}
+
+.batchEditBasicInfo {
+  height: 130px !important;
+  backgroundColor: white;
+}
+
+.batchEditLineInfo {
+  height: 10px !important;
+}
+
+.batchEditSalesInfo {
+  //height: 530px !important;
+  backgroundColor: white;
+}
+
+.batchEditTitleInfo {
+  fontSize: 18px !important;
+  fontWeight: bolder !important;
+  marginLeft: 5 !important;
+}
+
+.batchEditTotalInfo {
+  fontWeight: bolder !important;
+}
+
+.batchEditButtonInfo {
+  marginLeft: 550px !important;
+}
+
+/* copyModel-button-css */
+.copyModelButton {
+  float: right;
+  margin: auto;
+}
+
+/* select */
+.ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+  padding: 0 0;
+  font-size: 12px;
+}
+
+
+/* AutoComplete */
+.ant-select-single .ant-select-selector .ant-select-selection-search {
+  right: 0;
+  left: 0;
+}
+
+.components-table-demo-resizable-column .react-resizable {
+  position: relative;
+  background-clip: padding-box;
+}
+
+.components-table-demo-resizable-column .react-resizable-handle {
+  position: absolute;
+  right: -5px;
+  bottom: 0;
+  z-index: 1;
+  width: 10px;
+  height: 100%;
+  cursor: col-resize;
+}
+
+  /* div-css */
+.ButtonIcon {
+  :global {
+    .ant-btn{
+      position:relative;
+      height:0;
+      padding: 0 0;
+      line-height:0;
+      text-align: center;
+      cursor: default;
+    }
+  }
+}
+
+.titleMessageModel {
+  color: red;
+  font-weight: bold;
+}
+
+.ant-tooltip-inner{
+  color: black;
+  border: 1px solid black;
+}
+
+.BacicInfoAct {
+  :global {
+    .ant-table {
+      font-size: 12px;
+      border-top: 0px solid #f2f2f2;
+      border-right: 0 solid #f2f2f2;
+      border-bottom: 0px solid #f2f2f2;
+      border-left: 0px solid #f2f2f2;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    /* table-right */
+    .ant-table-right {
+      border-right: 0px solid black;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    /* 表头 */
+    .ant-table-thead > tr > th {
+      padding: 0px 0px;
+      color: white;
+      font-size: 14px;
+      line-height: 0px;
+      text-align: center;
+      background: white !important;
+      border-right: 0px solid #e0e0e0;
+      border-bottom: 0px solid #e0e0e0;
+      border-top: 0px solid #e0e0e0;
+      border-left: 0px solid #e0e0e0;
+    }
+
+    /* 表格内容 */
+    .ant-table-tbody > tr > td {
+      padding: 2px 1px;
+      line-height: 15px;
+      text-align: left;
+      border-right: 0px solid #e0e0e0;
+      border-bottom: 0px solid #e0e0e0;
+      border-left: 0px solid #e0e0e0;
+    }
+
+    .table-color-odd-line {
+      background-color: #f0f0f0;
+    }
+
+    .table-color-even-line {
+      background-color: white;
+    }
+  }
+}
+
+.SalesInfoAct {
+  :global {
+    .ant-table {
+      font-size: 12px;
+      border-top: 0px solid #f2f2f2;
+      border-right: 0px solid #f2f2f2;
+      border-bottom: 0px solid #f2f2f2;
+      border-left: 0px solid #f2f2f2;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    /* table-right */
+    .ant-table-right {
+      border-right: 1px solid black;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    /* 表头 */
+    .ant-table-thead > tr > th {
+      padding: 10px 0px;
+      color: #003D82;
+      font-size: 14px;
+      line-height: 8px !important;
+      text-align: center;
+      background: #ffffff !important;
+      border-right: 0px solid #e0e0e0;
+      border-bottom: 0px solid #e0e0e0;
+      border-top: 0px solid #e0e0e0;
+      border-left: 0px solid #e0e0e0;
+    }
+
+    /* 表格内容 */
+    .ant-table-tbody > tr > td {
+      padding: 1px 0px;
+      line-height: 4px !important;
+      text-align: left;
+      border-right: 0px solid #e0e0e0;
+      border-bottom: 0px solid #e0e0e0;
+      border-left: 0px solid #e0e0e0;
+    }
+  }
+}
+.subMenu {
+  border-top:1px solid #e0e0e0;
+}

@@ -1,0 +1,7 @@
+FROM openresty/openresty:alpine
+
+LABEL MAINTAINER="guojs@lzt.com"
+
+EXPOSE 80
+
+CMD ["/usr/local/openresty/bin/openresty","-g", "daemon off;"]

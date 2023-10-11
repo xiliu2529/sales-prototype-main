@@ -1,0 +1,218 @@
+@import '~antd/es/style/themes/default.less';
+
+.main {
+  width: 100%;
+  background: @component-background;
+}
+
+.editableRunningCaseTable {
+  :global {
+    .ant-table-container {
+      width: 98vw;
+    }
+
+    .ant-table {
+      font-size: 12px;
+      border-top: 1px solid #f2f2f2;
+      border-right: 1px solid #f2f2f2;
+      border-bottom: 1px solid #f2f2f2;
+      border-left: 1px solid #f2f2f2;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    /* table-right */
+    .ant-table-right {
+      border-right: 1px solid black;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    /* 表头 */
+    .ant-table-thead > tr > th {
+      padding: 12px 0px !important;
+      color: #f0f8ff;
+      font-size: 14px;
+      line-height: 10px;
+      text-align: center;
+      background: #368dd9 !important;
+      border-right: 1px solid #e0e0e0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .ant-table-column-sorter-up.active {
+      color: #003d82 !important;
+    }
+    .ant-table-column-sorter-down.active {
+      color: #003d82 !important;
+    }
+
+    /* 表格内容 */
+    .ant-table-tbody > tr > td {
+      padding: 2px 2px !important;
+      line-height: 15px;
+      text-align: left;
+      border-right: 1px solid #e0e0e0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .ant-picker {
+      padding: 0 0;
+    }
+
+    .table-color-odd-line {
+      background-color: #f0f0f0;
+    }
+
+    .table-color-even-line {
+      background-color: white;
+    }
+  }
+}
+.diseditableRunningCaseTable {
+  :global {
+    .ant-table-container {
+      width: 98vw;
+    }
+
+    .ant-table {
+      font-size: 12px;
+      border-top: 1px solid #f2f2f2;
+      border-right: 1px solid #f2f2f2;
+      border-bottom: 1px solid #f2f2f2;
+      border-left: 1px solid #f2f2f2;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    /* table-right */
+    .ant-table-right {
+      border-right: 1px solid black;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    /* 表头 */
+    .ant-table-thead > tr > th {
+      color: #f0f8ff;
+      font-size: 14px;
+      line-height: 10px;
+      text-align: center;
+      background: #368dd9 !important;
+      border-right: 1px solid #e0e0e0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    /* 表格内容 */
+    .ant-table-tbody > tr > td {
+      padding: 2px 2px !important;
+      line-height: 15px;
+      text-align: left;
+      border-right: 1px solid #e0e0e0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .ant-table-column-sorter-up.active {
+      color: #003d82 !important;
+    }
+    .ant-table-column-sorter-down.active {
+      color: #003d82 !important;
+    }
+    .ant-picker {
+      padding: 0 0;
+    }
+
+    .table-color-odd-line {
+      background-color: #f0f0f0;
+    }
+
+    .table-color-even-line {
+      background-color: white;
+    }
+  }
+}
+
+/* div-css */
+.div-class {
+  float: left;
+  width: fit-content;
+  margin: auto;
+}
+
+.select {
+  width: 100%;
+}
+
+.monthInput {
+  width: 100%;
+  height: 32px;
+  padding: 0 0;
+  text-align: left;
+}
+
+
+.amountDiv {
+  padding: 0 5px;
+  text-align: right;
+}
+
+.actionDiv {
+  text-align: center;
+}
+
+.amountInput {
+  width: 100%;
+  height: 32px;
+  padding: 0 0;
+  text-align: right;
+}
+
+.remarksInput {
+  width: 100%;
+  height: 32px;
+  padding: 0 0;
+  text-align: left;
+}
+
+.noDiv {
+  text-align: center;
+}
+
+.effortDiv {
+  text-align: right;
+}
+
+.effortInput {
+  width: 50%;
+  padding: 0 0;
+  line-height: 30px;
+  text-align: right;
+}
+
+.effortSelect {
+  width: 50%;
+  padding: 0 0;
+  line-height: 30px;
+  text-align: left;
+}
+
+.titleMessageModel {
+  color: red;
+  font-weight: bold;
+}
+
+/* div-css */
+.ButtonIcon {
+  :global {
+    .ant-btn{
+      position:relative;
+      height:0;
+      padding: 0 0;
+      line-height:0;
+      text-align: center;
+      cursor: default;
+    }
+
+    .ant-btn > .anticon + span, .ant-btn > span + .anticon{
+      margin-left: 0;
+    }
+  }
+}

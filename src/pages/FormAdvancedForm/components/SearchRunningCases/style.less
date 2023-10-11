@@ -1,0 +1,103 @@
+@import '~antd/es/style/themes/default.less';
+
+.main {
+  width: 100%;
+  background: @component-background;
+}
+
+.searchRun {
+  :global {
+    .ant-table-container {
+      width: 98vw;
+    }
+    .ant-table {
+      font-size: 12px;
+      border-top: 1px solid #f2f2f2;
+      border-right: 1px solid #f2f2f2;
+      border-bottom: 1px solid #f2f2f2;
+      border-left: 1px solid #f2f2f2;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    /* table-right */
+    .ant-table-right {
+      border-right: 1px solid black;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    /* 表头 */
+    .ant-table-thead > tr > th {
+      padding: 0px 0px !important;
+      color: white;
+      font-size: 14px;
+      line-height: 10px;
+      text-align: center;
+      background: #368dd9 !important;
+      border-right: 1px solid #e0e0e0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    /* 表格内容 */
+    .ant-table-tbody > tr > td {
+      padding: 2px 2px !important;
+      line-height: 15px;
+      text-align: left;
+      border-right: 1px solid #e0e0e0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .ant-table-column-sorter-up.active {
+      color: #003d82 !important;
+    }
+    .ant-table-column-sorter-down.active {
+      color: #003d82 !important;
+    }
+
+    .table-color-odd-line {
+      background-color: #f0f0f0;
+    }
+
+    .table-color-even-line {
+      background-color: white;
+    }
+  }
+}
+
+
+/* div-css */
+.div-class {
+  float: left;
+  width: fit-content;
+  margin: auto;
+}
+
+.addButton {
+  background: #368dd9 !important;
+}
+
+.BusUserSelect {
+  width: 200px;
+  margin: auto;
+  padding: 0 0;
+  text-align: left;
+}
+
+.amountDiv {
+  text-align: right;
+}
+.addButton {
+  background: #368dd9 !important;
+}
+
+.TopStyles{
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  font-weight: bold;
+  line-height: 40px;
+  text-align: center;
+  background: #A7CFF2;
+  border-radius: 4px;
+  font-Size: 25px;
+}

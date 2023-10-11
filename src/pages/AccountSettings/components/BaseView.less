@@ -1,0 +1,89 @@
+@import '~antd/es/style/themes/default.less';
+
+.title{
+  fontWeight:bolder;
+  fontSize:20px;
+  color:#003D82;
+  marginBottom:12px;
+}
+
+.baseView {
+  display: flex;
+  padding-top: 12px;
+
+  :global {
+    .ant-legacy-form-item .ant-legacy-form-item-control-wrapper {
+      width: 100%;
+    }
+  }
+
+
+  .left {
+    min-width: 224px;
+    max-width: 448px;
+  }
+  .edit {
+   width:100%;
+  }
+  .top{
+    width:100%;
+    height:60%;
+  }
+  .bottom{
+    display: flex;
+    flex-direction: row;
+ /*   marginTop:200px;*/
+    background: white;
+    margin-left: -40px;
+  }
+  .right {
+    flex: 1;
+    padding-top: 500px;
+    .avatar_title {
+      height: 22px;
+      margin-bottom: 8px;
+      color: @heading-color;
+      font-size: @font-size-base;
+      line-height: 22px;
+    }
+    .avatar {
+      width: 144px;
+      height: 144px;
+      margin-bottom: 12px;
+      overflow: hidden;
+      img {
+        width: 100%;
+      }
+    }
+    .button_view {
+      width: 144px;
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: @screen-xl) {
+  .baseView {
+    flex-direction: column-reverse;
+
+    .right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 448px;
+      padding: 20px;
+      .avatar_title {
+        display: none;
+      }
+    }
+  }
+}
+
+
+.styleFont{
+  :global {
+    .ant-form-item-label > label {
+      color: black;
+    }
+  }
+}

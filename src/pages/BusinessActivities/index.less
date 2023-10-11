@@ -1,0 +1,143 @@
+@import '~antd/es/style/themes/default.less';
+.main {
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+  background-color: @menu-bg;
+  .leftMenu {
+    width: 10%;
+    border-right: @border-width-base @border-style-base @border-color-split;
+    :global {
+      .ant-menu-inline {
+        border: none;
+      }
+      .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+        font-weight: bold;
+      }
+      .ant-menu-vertical .ant-menu-item, .ant-menu-vertical-left .ant-menu-item, .ant-menu-vertical-right .ant-menu-item, .ant-menu-inline .ant-menu-item, .ant-menu-vertical .ant-menu-submenu-title, .ant-menu-vertical-left .ant-menu-submenu-title, .ant-menu-vertical-right .ant-menu-submenu-title, .ant-menu-inline .ant-menu-submenu-title{
+        margin-top: 0;
+        padding: 0 0;
+      }
+    }
+  }
+  .right {
+    flex: 1;
+    padding-top: 0px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    .title {
+      margin-bottom: 12px;
+      color: @heading-color;
+      font-weight: 200;
+      font-size: 10px;
+      line-height: 20px;
+    }
+  }
+  :global {
+    .ant-list-split .ant-list-item:last-child {
+      border-bottom: 1px solid @border-color-split;
+    }
+    .ant-list-item {
+      padding-top: 14px;
+      padding-bottom: 14px;
+    }
+  }
+}
+
+.businessActivities{
+  width: 100%;
+}
+.businessActivitiesLeft{
+  background: #fff !important;
+  max-width: 170px  !important;
+  min-width: 170px !important;
+  width: 170px !important;
+  margin-right:10px;
+}
+.searchconditionssider{
+  background: #fff !important;
+  margin-right:10px;
+  padding-top: 20px;
+  max-width: 250px  !important;
+  min-width: 250px !important;
+  width: 250px !important;
+}
+.searchContent{
+  border-left: black 1px inset;
+  border-right: black 1px inset;
+  border-bottom:black 1px inset;
+  border-top:black 1px inset;
+}
+.searchButton{
+  margin-right: 18px;
+  float:right;
+}
+
+.activitiesSearchItem{
+  width: 150px !important;
+}
+
+.activitiesSearchHeader{
+  padding: 20px 20px 0px 20px;
+  background: white;
+}
+
+.activitiesNewBusines{
+  padding: 10px 10px 0px 10px;
+  background: white;
+}
+
+.searchActivitiesView{
+  padding: 20px;
+  border-top: black 1px inset;
+  min-height: auto !important;
+  background: white;
+}
+
+.searchActivitiesViewTop{
+  padding: 20px;
+  border-top: 0px;
+  min-height: auto !important;
+  background: white;
+}
+
+.searchContentBottom{
+  border-top: black 1px inset;
+  padding: 20px;
+}
+
+.caseActivitiesTab{
+  padding:20px;
+  width: 100%;
+  background:white;
+}
+.contentCommentCreateBtn{
+  text-align:center;
+  width:100%;
+  padding-top: 10px;
+}
+
+.caseActivitiesView{
+  padding: 20px;
+  border: black 1px inset;
+}
+
+
+.styleFont{
+  :global {
+    .ant-form-item-label > label {
+      color:#003D82;
+      font-weight: bolder;
+    }
+  }
+}
+
+.uploadFile{
+  :global {
+  .ant-upload-list-item-card-actions-btn{
+    opacity:1  !important;
+  }
+  }
+}

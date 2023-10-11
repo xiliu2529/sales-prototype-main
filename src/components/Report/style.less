@@ -1,0 +1,368 @@
+@import '~antd/es/style/themes/default.less';
+
+
+
+.main {
+  width: 100%;
+  background: @component-background;
+}
+
+
+.innerTable {
+  :global {
+    .ant-table-container {
+      width: 100%;
+    }
+
+    // テーブルスライドの色
+    .ant-table-tbody > tr.ant-table-row:hover > td{
+      background:#FDF;
+    }
+
+    .ant-table-thead > tr:not(:last-child) > th[colspan]{
+      border-bottom:1px solid #f2f2f2;
+    }
+    .ant-table {
+      font-size: 12px;
+      border-top: 1px solid #f2f2f2;
+      border-right: 1px solid #f2f2f2;
+      border-bottom: 1px solid #f2f2f2;
+      border-left: 1px solid #f2f2f2;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    /* table-right */
+    .ant-table-right {
+      border-right: 1px solid black;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    .ant-empty-normal {
+      height: 0px;
+      margin: 0;
+      display: none;
+    }
+
+    /* 表头 */
+    .ant-table-thead > tr > th {
+      height:50px;
+      padding: 5px 3px;
+      font-weight: bold;
+      font-size: 14px;
+      text-align: center;
+      background: #B1A0C7 !important;
+      border-right: 1px solid #f2f2f2;
+      border-bottom: 1px solid #f2f2f2;
+    }
+
+    /* 表格内容 */
+    .ant-table-tbody > tr > td {
+      padding: 1px 2px;
+      line-height: 20px;
+      text-align: left;
+      border-right: 1px solid #e0e0e0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+  }
+}
+.innerTableHead {
+  :global {
+    .ant-table-container {
+      width: 100%;
+    }
+
+   /* // テーブルスライドの色
+    .ant-table-tbody > tr.ant-table-row:hover > td{
+      background:#FDF;
+    }*/
+
+    .ant-table-thead > tr:not(:last-child) > th[colspan]{
+      border-bottom:1px solid #f2f2f2;
+    }
+    .ant-table {
+      font-size: 12px;
+      border-top: 1px solid #f2f2f2;
+      border-right: 1px solid #f2f2f2;
+      border-bottom: 1px solid #f2f2f2;
+      border-left: 1px solid #f2f2f2;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+    .ant-empty-normal {
+      height: 0px;
+      margin: 0;
+      display: none;
+    }
+
+    /* table-right */
+    .ant-table-right {
+      border-right: 1px solid black;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    /* 表头 */
+    .ant-table-thead > tr > th {
+      /*   height:23px;
+           font-weight: bold;
+           text-align: center;
+           background: #A7CFF2; */
+      font-size: 14px;
+      border-right: 1px solid #f2f2f2;
+      border-bottom: 1px solid #f2f2f2;
+    }
+
+    /* 表格内容 */
+    .ant-table-tbody > tr > td {
+      padding: 1px 2px;
+      line-height: 20px;
+      text-align: left;
+      border-right: 1px solid #e0e0e0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+  }
+}
+
+
+.innerTable2 {
+  :global {
+    .ant-table-container {
+      width: 100%;
+    }
+
+ /*   // テーブルスライドの色
+    .ant-table-tbody > tr.ant-table-row:hover > td{
+      background:#FDF;
+    } */
+
+    .ant-table-thead > tr:not(:last-child) > th[colspan]{
+      border-bottom:1px solid #f2f2f2;
+    }
+    .ant-table {
+      font-size: 12px;
+      border-top: 1px solid #f2f2f2;
+      border-right: 1px solid #f2f2f2;
+      border-bottom: 1px solid #f2f2f2;
+      border-left: 1px solid #f2f2f2;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+    .ant-empty-normal {
+      height: 0px;
+      margin: 0;
+    }
+
+    /* table-right */
+    .ant-table-right {
+      border-right: 1px solid black;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    /* 表头 */
+    .ant-table-thead > tr > th {
+ /*   height:23px;
+      font-weight: bold;
+      text-align: center;
+      background: #A7CFF2; */
+      font-size: 14px;
+      border-right: 1px solid #f2f2f2;
+      border-bottom: 1px solid #f2f2f2;
+    }
+
+    /* 表格内容 */
+    .ant-table-tbody > tr > td {
+      padding: 1px 2px;
+      line-height: 20px;
+      text-align: left;
+      border-right: 1px solid #e0e0e0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+  }
+}
+
+.noData{
+  font-size: 30px;
+  margin: 150px;
+  color: gray;
+  font-family: serif;
+}
+
+.innerSumTable {
+  :global {
+
+    .ant-table-container {
+      width: 100%;
+    }
+
+    // テーブルスライドの色
+    .ant-table-tbody > tr.ant-table-row:hover > td{
+      background:#FDF;
+    }
+
+    .ant-table-thead > tr:not(:last-child) > th[colspan]{
+      border-bottom:1px solid #f2f2f2;
+    }
+    .ant-table {
+      font-size: 12px;
+      border-top: 1px solid #f2f2f2;
+      border-right: 1px solid #f2f2f2;
+      border-bottom: 1px solid #f2f2f2;
+      border-left: 1px solid #f2f2f2;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    /* table-right */
+    .ant-table-right {
+      border-right: 1px solid black;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    /* 表头 */
+    .ant-table-thead > tr > th {
+      padding: 0 3px;
+      font-weight: bold;
+      font-size: 14px;
+      text-align: center;
+      background: #f2f2f2 !important;
+      border-right: 1px solid #f2f2f2;
+      border-bottom: 1px solid #f2f2f2;
+    }
+
+    /* 表格内容 */
+    .ant-table-tbody > tr > td {
+      padding: 5px 2px;
+      line-height: 15px;
+      text-align: left;
+      border-right: 1px solid #e0e0e0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+  }
+}
+
+
+/* div-css */
+.div-class {
+  float: left;
+  width: fit-content;
+  margin: auto;
+}
+
+.BusUserSelect {
+  width: 200px;
+  margin: auto;
+  padding: 0 0;
+  text-align: left;
+}
+
+.amountDiv {
+  text-align: right;
+}
+
+.alignLeft {
+  text-align: left;
+}
+
+.alignRight {
+  text-align: right;
+}
+
+.leftBorderLine {
+  border-right: white !important;
+  text-align: left !important;
+}
+
+.inputStyle {
+  :global {
+    .ant-input{
+      padding: 0 5px;
+    }
+  }
+}
+
+.boxTabs {
+  :global {
+    .ant-tabs {
+      border: 1.1px solid #f2f2f2;
+    }
+  }
+}
+
+.addButton {
+  width: 80px;
+  height: 40px;
+  background: #368dd9 !important;
+}
+
+
+.ReportTop {
+  position:relative;
+  left:100px;
+  width: 500px;
+}
+
+.ReportNameSelect {
+  width: 300px;
+  margin: auto;
+  padding: 0 0;
+  text-align: left;
+}
+
+/* Top card-css */
+.TopCard {
+  :global {
+    .ant-card{
+      line-height: 50px;
+    }
+  }
+}
+
+.BackColor_Purple_No {
+  background: #B1A0C7;
+}
+
+.BackColor_Purple_Bold {
+  font-weight: bold;
+  background: #B1A0C7;
+}
+
+.BackColor_Blue_No {
+  background: #B7DEE8;
+}
+
+.BackColor_Blue_Bold {
+  font-weight: bold;
+  background: #B7DEE8;
+}
+
+
+.BackColor_Cyan_Bold {
+  font-weight: bold;
+  background: #A7CFF2;
+}
+
+
+/* div-css */
+.AllPageDiv {
+  :global {
+    .ant-card-body{
+    }
+  }
+}
+
+/* div-css */
+.YearDiv {
+  font-weight: bold;
+  height: 10px;
+}
+
+.total {
+  font-weight: bold;
+  column-count: 6;
+  column-span:6;
+}
+

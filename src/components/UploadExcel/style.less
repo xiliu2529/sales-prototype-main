@@ -1,0 +1,99 @@
+@import '~antd/es/style/themes/default.less';
+
+.main {
+  width: 100%;
+  background: @component-background;
+}
+
+.innerTable {
+  :global {
+    .ant-table-container {
+      width: 100%;
+    }
+    .ant-table-thead > tr:not(:last-child) > th[colspan]{
+      border-bottom:1px solid #f2f2f2;
+    }
+    .ant-table {
+      font-size: 12px;
+      border-top: 1px solid #f2f2f2;
+      border-right: 1px solid #f2f2f2;
+      border-bottom: 1px solid #f2f2f2;
+      border-left: 1px solid #f2f2f2;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    /* table-right */
+    .ant-table-right {
+      border-right: 1px solid black;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    /* 表头 */
+    .ant-table-thead > tr > th {
+      padding: 5px 3px;
+      color: white;
+      font-size: 14px;
+      line-height: 13px;
+      text-align: center;
+      background: #368DD9 !important;
+      border-right: 1px solid #f2f2f2;
+      border-bottom: 1px solid #f2f2f2;
+    }
+
+    /* 表格内容 */
+    .ant-table-tbody > tr > td {
+      padding: 5px 2px;
+      line-height: 15px;
+      text-align: left;
+      border-right: 1px solid #e0e0e0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+  }
+}
+
+
+/* div-css */
+.div-class {
+  float: left;
+  width: fit-content;
+  margin: auto;
+}
+
+.BusUserSelect {
+  width: 200px;
+  margin: auto;
+  padding: 0 0;
+  text-align: left;
+}
+
+.amountDiv {
+  text-align: right;
+}
+
+.alignLeft {
+  text-align: left;
+}
+
+.alignRight {
+  text-align: right;
+}
+
+.alignCenter {
+  text-align: center;
+}
+
+.boxTabs {
+  :global {
+    .ant-tabs {
+      border: 1.1px solid #f2f2f2;
+    }
+  }
+}
+
+.addButton {
+  width: 80px;
+  height: 40px;
+  background: #368dd9 !important;
+}
