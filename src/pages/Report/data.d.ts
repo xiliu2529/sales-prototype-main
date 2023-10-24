@@ -15,6 +15,7 @@ export interface ReportInfoModel {
   authOrgCd: string;
   selectedOrgCd: string;
   loginUserCd: string;
+  Top:number;//排名前
 }
 
 export interface DataModal {

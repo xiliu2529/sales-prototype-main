@@ -23,9 +23,29 @@ class Index extends Component<ReportProps> {
     // eslint-disable-next-line react/no-unused-state
     formatCode: '',
     formatName: '',
+    Top:10,
+    showSelect :false,
+    reportParam: null,
 
     init: true,
     searchLoading: false,
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.Top !== prevState.Top) {
+      const {dispatch} = this.props;
+      const { reportParam } = this.state;
+      if(reportParam !== null){ 
+         reportParam.top = this.state.Top;}
+         const reportInfoModel  = JSON.stringify(reportParam);
+      
+      dispatch({
+        type: 'reportData/getFormatHeaderNameData',
+        payload: {
+          reportInfoModel
+        },
+      });
+    }
   }
   // @ts-ignore
   changeRightMenu = (parma1: boolean,parma2: boolean,parma3: boolean,parma4: boolean,parma5: boolean,parma6: boolean): void => {
@@ -68,10 +88,6 @@ class Index extends Component<ReportProps> {
   };
 
   componentDidMount() {
-
-    console.log(this.props.user);
-    console.log(this.props.global);
-
     const {dispatch} = this.props;
 
     const language = this.props.user.currentUser?.dspLang;
@@ -113,6 +129,9 @@ class Index extends Component<ReportProps> {
    * report Name 变更方法
    * @param e: 变更后的值
    */
+  handleChange = (event:any) => {
+    this.setState({ Top: event});
+  };
   onSelect = (e: string) => {
 
     this.setState({
@@ -143,6 +162,7 @@ class Index extends Component<ReportProps> {
             const layCd = formatCode;
             const {authPro} = formatNmList[0];
             const authOrgCd = this.props.user.currentUser?.authOrgCds;
+            const top = this.state.Top;
             let selectedOrgCd ;
             if( this.props.global.homePageMenu[0].selectedKeys !== undefined &&  this.props.global.homePageMenu[0].selectedKeys!== ""
               &&  this.props.global.homePageMenu[0].selectedKeys!== null){
@@ -156,8 +176,14 @@ class Index extends Component<ReportProps> {
             }
 
             const loginUserCd = this.props.user.currentUser?.userid;
-            const reportParam: ReportInfoModel = { layCd, budgetYear, orgGroupId, authPro, authOrgCd, selectedOrgCd,loginUserCd };
+            const reportParam: ReportInfoModel = { layCd, budgetYear, orgGroupId, authPro, authOrgCd, selectedOrgCd,loginUserCd,top};
             const reportInfoModel  = JSON.stringify(reportParam);
+            this.setState({ reportParam });
+            if(reportParam.layCd === "REP_005"){
+              this.setState({ showSelect: true});
+            }else{
+              this.setState({ showSelect: false});
+            }
             dispatch({
               type: 'reportData/getFormatHeaderNameData',
               payload: {
@@ -196,7 +222,6 @@ class Index extends Component<ReportProps> {
     };
 
     const formatNameList = this.props.reportData.formatNameData;
-
     let optionNameList: FormatNameType[] = [];
     if(formatNameList!== null && formatNameList.length>0){
       optionNameList = formatNameList;
@@ -221,7 +246,6 @@ class Index extends Component<ReportProps> {
             <Card>
               <div className={styles.ReportTop}>
                 <Space size={10}>
-
                   {formatMessage({ id: 'report.label.ReportName' })}
                   <Select
                     className={styles.ReportNameSelect}
@@ -230,6 +254,18 @@ class Index extends Component<ReportProps> {
                   >
                     {getformatNameOption(optionNameList)}
                   </Select>
+                  {this.state.showSelect ? (
+                  <div>
+                    {formatMessage({ id: 'report.label.Top' })}
+                    <Select style={{ width: '100px',margin: '10px' }} value={this.state.Top} onChange={this.handleChange}>
+                      <option value={5}>5</option> 
+                      <option value={10}>10</option> 
+                      <option value={15}>15</option> 
+                      <option value={20}>20</option>  
+                    </Select>{formatMessage({ id: 'report.label.ranking' })}
+                  </div>
+                ) : null}
+
                 </Space>
               </div>
             </Card>
