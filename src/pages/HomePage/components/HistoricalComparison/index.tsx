@@ -14,6 +14,8 @@ export interface HistoricalComparisonProps {
   thisYear:[];
   lastYear:[];
   beforeLastYear:[];
+  fourYear:[];
+  fiveYear:[];
 }
 
 class HistoricalComparison extends Component<HistoricalComparisonProps>{
@@ -27,8 +29,10 @@ class HistoricalComparison extends Component<HistoricalComparisonProps>{
     this.getOption(this.props.historicalComparison)
   }
 */
-  getOption = ( legendData: any, thisYear: any, lastYear: any, beforeLastYear: any)=>{
-
+  getOption = ( legendData: any, thisYear: any, lastYear: any, beforeLastYear: any,fourYear :any,fiveYear:any,year:any)=>{
+      console.log("year2222",year);
+    const title4 =legendData[4].replace(/([^:]+)$/, '').replace(":","");
+    const title3 =legendData[3].replace(/([^:]+)$/, '').replace(":","");
     const title2 =legendData[2].replace(/([^:]+)$/, '').replace(":","");
     // const title2 =legendData[2];
     // const title1 =legendData[1];
@@ -84,40 +88,88 @@ class HistoricalComparison extends Component<HistoricalComparisonProps>{
       }
       monthData.push(commonMonth);
     }
-
-    let option;
-    // eslint-disable-next-line prefer-const
-    option = {
-      backgroundColor: '#FFFFFF',
-      grid: {
-        left: '10%',
-        right: '5%',
-        top: '90%',
-        bottom: '70%'
-      },
-      tooltip: {
-        trigger: 'axis'
-      },
-      xAxis: [
-        {
-          type: 'category',
-          data: monthData,
-          axisPointer: {
-            type: 'shadow'
-          }
-        }
-      ],
-      yAxis: [
-        {
-          type: 'value',
-          name: salesTitleY,
-          axisLabel: {
-            formatter: '{value}'
-          }
-        }
-      ],
-      series: [
-        {
+    let option ;
+    let seriesData = [
+       {
+          name: title4,
+          type: 'bar',
+          lineStyle: {
+            width: 3,
+            color: '#33ffcc'
+          },
+          markPoint: {
+            symbol: 'roundRect',
+            symbolSize: [20, 8],
+            data: [{x: '15%', y: '5%'}],
+            label: {
+              position: 'right',
+              formatter(params: { seriesIndex: string | number; }) {
+                let datavalue = 0;
+                // eslint-disable-next-line no-plusplus
+                for (let i = 0; i < 12; i++) {
+                  // eslint-disable-next-line @typescript-eslint/no-use-before-define
+                  datavalue += parseFloat(series[series.length-4].data[i]);
+                }
+                // eslint-disable-next-line no-use-before-define,@typescript-eslint/no-use-before-define
+                return `${title3}:${ formatNum(datavalue)}`;
+              }
+            }
+          },
+          itemStyle: {
+            normal: {
+              barBorderRadius: 5,
+              color: new echarts.graphic.LinearGradient(
+                0, 0, 0, 1,
+                [
+                  {offset: 1, color: '#33ffcc'},
+                  {offset: 0, color: '#33ffcc'}
+                ]
+              )
+            }
+          },
+       
+          data:fiveYear
+        },
+       {
+            name: title3,
+            type: 'bar',
+            lineStyle: {
+              width: 3,
+              color: '#39C5BB'
+            },
+            markPoint: {
+              symbol: 'roundRect',
+              symbolSize: [20, 8],
+              data: [{x: '15%', y: '10%'}],
+              label: {
+                position: 'right',
+                formatter(params: { seriesIndex: string | number; }) {
+                  let datavalue = 0;
+                  // eslint-disable-next-line no-plusplus
+                  for (let i = 0; i < 12; i++) {
+                    // eslint-disable-next-line @typescript-eslint/no-use-before-define
+                    datavalue += parseFloat(series[series.length-4].data[i]);
+                  }
+                  // eslint-disable-next-line no-use-before-define,@typescript-eslint/no-use-before-define
+                  return `${title3}:${ formatNum(datavalue)}`;
+                }
+              }
+            },
+            itemStyle: {
+              normal: {
+                barBorderRadius: 5,
+                color: new echarts.graphic.LinearGradient(
+                  0, 0, 0, 1,
+                  [
+                    {offset: 1, color: '#39C5BB'},
+                    {offset: 0, color: '#39C5BB'}
+                  ]
+                )
+              }
+            },
+            data:fourYear
+        },
+       {
           name: title2,
           type: 'bar',
           lineStyle: {
@@ -127,7 +179,7 @@ class HistoricalComparison extends Component<HistoricalComparisonProps>{
           markPoint: {
             symbol: 'roundRect',
             symbolSize: [20, 8],
-            data: [{x: '15%', y: '10%'}],
+            data: [{x: '15%', y: '15%'}],
             label: {
               position: 'right',
               formatter(params: { seriesIndex: string | number; }) {
@@ -135,7 +187,7 @@ class HistoricalComparison extends Component<HistoricalComparisonProps>{
                 // eslint-disable-next-line no-plusplus
                 for (let i = 0; i < 12; i++) {
                   // eslint-disable-next-line @typescript-eslint/no-use-before-define
-                  datavalue += parseFloat(series[0].data[i]);
+                  datavalue += parseFloat(series[series.length-3].data[i]);
                 }
                 // eslint-disable-next-line no-use-before-define,@typescript-eslint/no-use-before-define
                 return `${title2}:${ formatNum(datavalue)}`;
@@ -166,7 +218,7 @@ class HistoricalComparison extends Component<HistoricalComparisonProps>{
           markPoint: {
             symbol: 'roundRect',
             symbolSize: [20, 8],
-            data: [{x: '15%', y: '15%'}],
+            data: [{x: '15%', y: '20%'}],
             label: {
               position: 'right',
               formatter(params: { seriesIndex: React.ReactText; }):string {
@@ -174,7 +226,7 @@ class HistoricalComparison extends Component<HistoricalComparisonProps>{
                 // eslint-disable-next-line no-plusplus
                 for (let i = 0; i < 12; i++) {
                   // eslint-disable-next-line @typescript-eslint/no-use-before-define
-                  datavalue +=parseFloat(series[1].data[i]);
+                  datavalue +=parseFloat(series[series.length-2].data[i]);
                 }
                 // eslint-disable-next-line no-use-before-define,@typescript-eslint/no-use-before-define
                 return `${title1}:${ formatNum(datavalue)}`;
@@ -204,7 +256,7 @@ class HistoricalComparison extends Component<HistoricalComparisonProps>{
           markPoint: {
             symbol: 'roundRect',
             symbolSize: [20, 8],
-            data: [{x: '15%', y: '20%'}],
+            data: [{x: '15%', y: '25%'}],
             label: {
               position: 'right',
               formatter(params: { seriesIndex: React.ReactText; }) {
@@ -212,7 +264,7 @@ class HistoricalComparison extends Component<HistoricalComparisonProps>{
                 // eslint-disable-next-line no-plusplus
                 for (let i = 0; i < 12; i++) {
                   // eslint-disable-next-line @typescript-eslint/no-use-before-define
-                  datavalue += parseFloat(series[2].data[i]);
+                  datavalue += parseFloat(series[series.length-1].data[i]);
                 }
                 // eslint-disable-next-line no-use-before-define,@typescript-eslint/no-use-before-define
                 return `${title0}:${ formatNum(datavalue)}`;
@@ -233,8 +285,50 @@ class HistoricalComparison extends Component<HistoricalComparisonProps>{
           },
           data: thisYear
         }
-      ]
-    };
+    ];
+      if (year < 5) {
+       seriesData.shift();
+       }
+      if (year < 4) {
+        seriesData.shift();
+          }
+      if (year < 3) {
+        seriesData.shift(); 
+      }
+    // eslint-disable-next-line prefer-const
+      option = {
+        backgroundColor: '#FFFFFF',
+        grid: {
+          left: '10%',
+          right: '5%',
+          top: '90%',
+          bottom: '70%'
+        },
+        tooltip: {
+          trigger: 'axis'
+        },
+        xAxis: [
+          {
+            type: 'category',
+            data: monthData,
+            axisPointer: {
+              type: 'shadow'
+            }
+          }
+        ],
+        yAxis: [
+          {
+            type: 'value',
+            name: salesTitleY,
+            axisLabel: {
+              formatter: '{value}'
+            }
+          }
+        ],
+      
+        series: seriesData
+      };
+ 
 
     function formatNum(strNum: string | number | any[]) {
       if (typeof strNum !== "number" && strNum?.length <= 3) {
@@ -258,10 +352,10 @@ class HistoricalComparison extends Component<HistoricalComparisonProps>{
   }
 
 render() {
-  const { legendData,thisYear,lastYear, beforeLastYear } = this.props;
+  const { legendData,thisYear,lastYear, beforeLastYear,fourYear,fiveYear,year } = this.props;
   return (
       <div>
-        <ReactEcharts style={{ top:10, width: '102%', height:'300%' }} option={this.getOption( legendData,thisYear,lastYear, beforeLastYear )} />
+        <ReactEcharts key={this.props.year} style={{ top: 10, width: '102%', height: '300%' }}option={this.getOption(legendData, thisYear, lastYear, beforeLastYear, fourYear, fiveYear, year)}/>
       </div>
   );
 }

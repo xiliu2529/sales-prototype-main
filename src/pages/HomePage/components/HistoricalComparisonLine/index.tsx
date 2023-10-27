@@ -12,6 +12,8 @@ export interface HistoricalComparisonLineProps {
   thisYear:[];
   lastYear:[];
   beforeLastYear:[];
+  fourYear:[];
+  fiveYear:[];
 }
 
 class HistoricalComparisonLine extends Component<HistoricalComparisonLineProps>{
@@ -27,8 +29,10 @@ class HistoricalComparisonLine extends Component<HistoricalComparisonLineProps>{
   }
 */
 
-  getOption = (legendData: any, thisYear: any, lastYear: any, beforeLastYear: any)=>{
+  getOption = (legendData: any, thisYear: any, lastYear: any, beforeLastYear: any,fourYear: any,fiveYear:any,year:any)=>{
     let option;
+    const title4 =legendData[4].replace(/([^:]+)$/, '').replace(":","");
+    const title3 =legendData[3].replace(/([^:]+)$/, '').replace(":","");
     const title2 =legendData[2].replace(/([^:]+)$/, '').replace(":","");
 
     const title1 =legendData[1].replace(/([^:]+)$/, '').replace(":","");
@@ -87,6 +91,152 @@ class HistoricalComparisonLine extends Component<HistoricalComparisonLineProps>{
     let salesTitleY= formatMessage({ id: "homepage.basic.Sales" });
 
     // eslint-disable-next-line prefer-const
+    let seriesData =  [
+      {
+      name: title4,
+      data: fourYear,
+      type: 'line',
+      color: '#33ffcc',
+      // color: '#A3C4D9',
+      smooth: true,
+      lineStyle: {width: 3},
+      itemStyle: {
+        borderWidth: 2
+      },
+      markPoint: {
+        symbol: 'rect',
+        symbolSize: [25,3],
+        data: [{x: '18%', y: '5%'}],
+        label: {
+          color: '#000000',
+          position: 'right',
+          formatter(params: { seriesIndex: React.ReactText; }) {
+            // eslint-disable-next-line @typescript-eslint/no-use-before-define
+            let datavalue = series[params.seriesIndex].data[12];
+            // eslint-disable-next-line no-use-before-define,@typescript-eslint/no-use-before-define
+            return `${title2}:${ formatNum(datavalue)}`;
+          }
+        }
+      }
+    },
+      {
+      name: title3,
+      data: fiveYear,
+      type: 'line',
+      color: '#39C5BB',
+      // color: '#A3C4D9',
+      smooth: true,
+      lineStyle: {width: 3},
+      itemStyle: {
+        borderWidth: 2
+      },
+      markPoint: {
+        symbol: 'rect',
+        symbolSize: [25,3],
+        data: [{x: '18%', y: '10%'}],
+        label: {
+          color: '#000000',
+          position: 'right',
+          formatter(params: { seriesIndex: React.ReactText; }) {
+            // eslint-disable-next-line @typescript-eslint/no-use-before-define
+            let datavalue = series[params.seriesIndex].data[12];
+            // eslint-disable-next-line no-use-before-define,@typescript-eslint/no-use-before-define
+            return `${title2}:${ formatNum(datavalue)}`;
+          }
+        }
+      }
+    },
+      {
+      name: title2,
+      data: beforeLastYear,
+      type: 'line',
+      color: '#56A6A6',
+      // color: '#A3C4D9',
+      smooth: true,
+      lineStyle: {width: 3},
+      itemStyle: {
+        borderWidth: 2
+      },
+      markPoint: {
+        symbol: 'rect',
+        symbolSize: [25,3],
+        data: [{x: '18%', y: '15%'}],
+        label: {
+          color: '#000000',
+          position: 'right',
+          formatter(params: { seriesIndex: React.ReactText; }) {
+            // eslint-disable-next-line @typescript-eslint/no-use-before-define
+            let datavalue = series[params.seriesIndex].data[12];
+            // eslint-disable-next-line no-use-before-define,@typescript-eslint/no-use-before-define
+            return `${title2}:${ formatNum(datavalue)}`;
+          }
+        }
+      }
+    },
+      {
+        name:title1,
+        data: lastYear,
+        type: 'line',
+        color: '#079DD9',
+        // color: '#048ABF',
+        smooth: true,
+        lineStyle: {width: 3},
+        itemStyle: {
+          borderWidth: 2
+        },
+        markPoint: {
+          symbol: 'rect',
+          symbolSize: [25,3],
+          data: [{x: '18%', y: '20%'}],
+          label: {
+            color: '#000000',
+            position: 'right',
+            formatter(params: { seriesIndex: React.ReactText; }) {
+              // eslint-disable-next-line @typescript-eslint/no-use-before-define,@typescript-eslint/no-unused-vars
+              let datavalue = series[params.seriesIndex].data[12];
+              // eslint-disable-next-line no-use-before-define,@typescript-eslint/no-use-before-define
+              return `${title1 }:${formatNum(datavalue)}`;
+            }
+          }
+        }
+      },
+      {
+        name: title0,
+        data: thisYear,
+        type: 'line',
+        color: '#0D448C',
+        // color: '#18358C',
+        smooth: true,
+        lineStyle: {width: 3},
+        itemStyle: {
+          borderWidth: 2
+        },
+        markPoint: {
+          symbol: 'rect',
+          symbolSize: [25,3],
+          data: [{x: '18%', y: '25%'}],
+          label: {
+            color: '#000000',
+            position: 'right',
+            // @ts-ignore
+            formatter(params: { seriesIndex: React.ReactText; }) {
+              // eslint-disable-next-line @typescript-eslint/no-use-before-define,@typescript-eslint/no-unused-vars
+              let datavalue = series[params.seriesIndex].data[12];
+              // eslint-disable-next-line no-use-before-define,@typescript-eslint/no-use-before-define
+              return `${title0 }:${formatNum(datavalue)}`;
+            }
+          }
+        }
+      }]
+     if (year < 5) {
+      seriesData.shift();
+      }
+     if (year < 4) {
+       seriesData.shift();
+         }
+     if (year < 3) {
+       seriesData.shift(); 
+     }
     option = {
       backgroundColor: '#FFFFFF',
       grid: {
@@ -115,88 +265,7 @@ class HistoricalComparisonLine extends Component<HistoricalComparisonLineProps>{
         type: 'value',
         name: salesTitleY
       },
-      series: [{
-        name: title2,
-        data: beforeLastYear,
-        type: 'line',
-        color: '#56A6A6',
-        // color: '#A3C4D9',
-        smooth: true,
-        lineStyle: {width: 3},
-        itemStyle: {
-          borderWidth: 2
-        },
-        markPoint: {
-          symbol: 'rect',
-          symbolSize: [25,3],
-          data: [{x: '18%', y: '10%'}],
-          label: {
-            color: '#000000',
-            position: 'right',
-            formatter(params: { seriesIndex: React.ReactText; }) {
-              // eslint-disable-next-line @typescript-eslint/no-use-before-define
-              let datavalue = series[params.seriesIndex].data[12];
-              // eslint-disable-next-line no-use-before-define,@typescript-eslint/no-use-before-define
-              return `${title2}:${ formatNum(datavalue)}`;
-            }
-          }
-        }
-      },
-        {
-          name:title1,
-          data: lastYear,
-          type: 'line',
-          color: '#079DD9',
-          // color: '#048ABF',
-          smooth: true,
-          lineStyle: {width: 3},
-          itemStyle: {
-            borderWidth: 2
-          },
-          markPoint: {
-            symbol: 'rect',
-            symbolSize: [25,3],
-            data: [{x: '18%', y: '17%'}],
-            label: {
-              color: '#000000',
-              position: 'right',
-              formatter(params: { seriesIndex: React.ReactText; }) {
-                // eslint-disable-next-line @typescript-eslint/no-use-before-define,@typescript-eslint/no-unused-vars
-                let datavalue = series[params.seriesIndex].data[12];
-                // eslint-disable-next-line no-use-before-define,@typescript-eslint/no-use-before-define
-                return `${title1 }:${formatNum(datavalue)}`;
-              }
-            }
-          }
-        },
-        {
-          name: title0,
-          data: thisYear,
-          type: 'line',
-          color: '#0D448C',
-          // color: '#18358C',
-          smooth: true,
-          lineStyle: {width: 3},
-          itemStyle: {
-            borderWidth: 2
-          },
-          markPoint: {
-            symbol: 'rect',
-            symbolSize: [25,3],
-            data: [{x: '18%', y: '24%'}],
-            label: {
-              color: '#000000',
-              position: 'right',
-              // @ts-ignore
-              formatter(params: { seriesIndex: React.ReactText; }) {
-                // eslint-disable-next-line @typescript-eslint/no-use-before-define,@typescript-eslint/no-unused-vars
-                let datavalue = series[params.seriesIndex].data[12];
-                // eslint-disable-next-line no-use-before-define,@typescript-eslint/no-use-before-define
-                return `${title0 }:${formatNum(datavalue)}`;
-              }
-            }
-          }
-        }]
+      series: seriesData
     };
 
     function formatNum(strNum: string | any[]) {
@@ -224,10 +293,10 @@ class HistoricalComparisonLine extends Component<HistoricalComparisonLineProps>{
   }
 
   render() {
-    const { legendData,thisYear,lastYear, beforeLastYear} = this.props;
+    const { legendData,thisYear,lastYear, beforeLastYear,fiveYear,fourYear,year} = this.props;
     return (
         <div>
-          <ReactEcharts style={{ top:10, width: '102%', height:'300%' }} option={this.getOption(legendData,thisYear,lastYear, beforeLastYear)} />
+          <ReactEcharts key={this.props.year} style={{ top:10, width: '102%', height:'300%' }} option={this.getOption(legendData,thisYear,lastYear, beforeLastYear,fourYear,fiveYear,year)} />
         </div>
     );
   }

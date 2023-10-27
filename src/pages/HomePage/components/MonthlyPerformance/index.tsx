@@ -6,7 +6,7 @@ import 'echarts/lib/chart/line'
 import 'echarts/lib/component/tooltip';
 import 'echarts/lib/component/title';
 import ReactEcharts from 'echarts-for-react';
-import {Col, Row, Switch} from "antd";
+import {Row, Switch,Radio} from "antd";
 import HistoricalComparison from "@/pages/HomePage/components/HistoricalComparison";
 import MonthlyPerformanceLine from "@/pages/HomePage/components/MonthlyPerformanceLine";
 import HistoricalComparisonLine from "@/pages/HomePage/components/HistoricalComparisonLine";
@@ -25,6 +25,7 @@ export interface MonthlyPerformanceProps {
   budgetOrhistorical?:boolean;
   typIndex?:number;
   dispatch: Dispatch;
+  year: any;
 }
 
 
@@ -35,6 +36,7 @@ class MonthlyPerformance extends Component<MonthlyPerformanceProps>{
     this.state = {
       budgetOrhistorical:true,
       typIndex:0,
+      year:3,
     };
     this.chartChange = this.chartChange.bind(this);
     this.barChange = this.barChange.bind(this);
@@ -57,7 +59,7 @@ class MonthlyPerformance extends Component<MonthlyPerformanceProps>{
     });
   }
 
- // 月営業データと三年営業データの切り替え
+ // 月営業データと五年営業データの切り替え
   switchOnChange() {
     // @ts-ignore
     const {budgetOrhistorical} = this.state;
@@ -65,6 +67,27 @@ class MonthlyPerformance extends Component<MonthlyPerformanceProps>{
       // eslint-disable-next-line react/no-access-state-in-setstate
       budgetOrhistorical: !budgetOrhistorical,
     });
+  }
+  BudgetDiff() {
+    // @ts-ignore
+    const {budgetOrhistorical} = this.state;
+    this.setState({
+      // eslint-disable-next-line react/no-access-state-in-setstate
+      budgetOrhistorical: true,
+    });
+  }
+
+   handleRadioChange(value:any) {
+    const {budgetOrhistorical,year} = this.state;
+      if(value == 1){
+        this.BudgetDiff()
+      }else{
+    this.setState({
+            // eslint-disable-next-line react/no-access-state-in-setstate
+            budgetOrhistorical: false,
+            year:value
+          });
+      }
   }
 
   componentDidMount() {
@@ -512,6 +535,8 @@ class MonthlyPerformance extends Component<MonthlyPerformanceProps>{
     const thisYear:any[]=[];
     const lastYear:any[]=[];
     const beforeLastYear:any[]=[];
+    const fourYear:any[]=[];
+    const fiveYear:any[]=[];
 
     // @ts-ignore
     // eslint-disable-next-line no-plusplus
@@ -520,7 +545,7 @@ class MonthlyPerformance extends Component<MonthlyPerformanceProps>{
         // Home Page_月営業データ:図のタイトル
         legendData.push(budgetOrHistDataList[i].title);
       }else {
-        // 三年営業データ:図のタイトル
+        // 五年営業データ:図のタイトル
         legendDataHist.push(budgetOrHistDataList[i].title);
       }
       // Home Page_月営業データ: 図のデータ
@@ -584,7 +609,7 @@ class MonthlyPerformance extends Component<MonthlyPerformanceProps>{
         actuallyEffort.push(budgetOrHistDataList[i].effort12);
       }
       if(i===2){
-        // 三年営業データ:今年のデータ
+        // 五年営業データ:今年のデータ
         thisYear.push(budgetOrHistDataList[i].month1.toFixed(0));
         thisYear.push(budgetOrHistDataList[i].month2.toFixed(0));
         thisYear.push(budgetOrHistDataList[i].month3.toFixed(0));
@@ -599,7 +624,7 @@ class MonthlyPerformance extends Component<MonthlyPerformanceProps>{
         thisYear.push(budgetOrHistDataList[i].month12.toFixed(0));
       }
       if(i===3){
-        // 三年営業データ:去年のデータ
+        // 五年営業データ:去年のデータ
         lastYear.push(budgetOrHistDataList[i].month1.toFixed(0));
         lastYear.push(budgetOrHistDataList[i].month2.toFixed(0));
         lastYear.push(budgetOrHistDataList[i].month3.toFixed(0));
@@ -614,7 +639,7 @@ class MonthlyPerformance extends Component<MonthlyPerformanceProps>{
         lastYear.push(budgetOrHistDataList[i].month12.toFixed(0));
       }
       if(i===4){
-        // 三年営業データ:一昨年のデータ
+        // 五年営業データ:一昨年のデータ
         beforeLastYear.push(budgetOrHistDataList[i].month1.toFixed(0));
         beforeLastYear.push(budgetOrHistDataList[i].month2.toFixed(0));
         beforeLastYear.push(budgetOrHistDataList[i].month3.toFixed(0));
@@ -627,6 +652,36 @@ class MonthlyPerformance extends Component<MonthlyPerformanceProps>{
         beforeLastYear.push(budgetOrHistDataList[i].month10.toFixed(0));
         beforeLastYear.push(budgetOrHistDataList[i].month11.toFixed(0));
         beforeLastYear.push(budgetOrHistDataList[i].month12.toFixed(0));
+      }
+      if(i===5){
+        // 五年営業データ:一昨昨年のデータ
+        fourYear.push(budgetOrHistDataList[i].month1.toFixed(0));
+        fourYear.push(budgetOrHistDataList[i].month2.toFixed(0));
+        fourYear.push(budgetOrHistDataList[i].month3.toFixed(0));
+        fourYear.push(budgetOrHistDataList[i].month4.toFixed(0));
+        fourYear.push(budgetOrHistDataList[i].month5.toFixed(0));
+        fourYear.push(budgetOrHistDataList[i].month6.toFixed(0));
+        fourYear.push(budgetOrHistDataList[i].month7.toFixed(0));
+        fourYear.push(budgetOrHistDataList[i].month8.toFixed(0));
+        fourYear.push(budgetOrHistDataList[i].month9.toFixed(0));
+        fourYear.push(budgetOrHistDataList[i].month10.toFixed(0));
+        fourYear.push(budgetOrHistDataList[i].month11.toFixed(0));
+        fourYear.push(budgetOrHistDataList[i].month12.toFixed(0));
+      }
+      if(i===6){
+        // 五年営業データ:四年前のデータ
+        fiveYear.push(budgetOrHistDataList[i].month1.toFixed(0));
+        fiveYear.push(budgetOrHistDataList[i].month2.toFixed(0));
+        fiveYear.push(budgetOrHistDataList[i].month3.toFixed(0));
+        fiveYear.push(budgetOrHistDataList[i].month4.toFixed(0));
+        fiveYear.push(budgetOrHistDataList[i].month5.toFixed(0));
+        fiveYear.push(budgetOrHistDataList[i].month6.toFixed(0));
+        fiveYear.push(budgetOrHistDataList[i].month7.toFixed(0));
+        fiveYear.push(budgetOrHistDataList[i].month8.toFixed(0));
+        fiveYear.push(budgetOrHistDataList[i].month9.toFixed(0));
+        fiveYear.push(budgetOrHistDataList[i].month10.toFixed(0));
+        fiveYear.push(budgetOrHistDataList[i].month11.toFixed(0));
+        fiveYear.push(budgetOrHistDataList[i].month12.toFixed(0));
       }
     }
 
@@ -735,6 +790,37 @@ class MonthlyPerformance extends Component<MonthlyPerformanceProps>{
         beforeLastYearLine.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6+budgetOrHistDataList[i].month7+budgetOrHistDataList[i].month8+budgetOrHistDataList[i].month9+budgetOrHistDataList[i].month10+budgetOrHistDataList[i].month11).toFixed(0));
         beforeLastYearLine.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6+budgetOrHistDataList[i].month7+budgetOrHistDataList[i].month8+budgetOrHistDataList[i].month9+budgetOrHistDataList[i].month10+budgetOrHistDataList[i].month11+budgetOrHistDataList[i].month12).toFixed(0));
       }
+      if(i===5){
+        fourYear.push(0);
+        fourYear.push((0+budgetOrHistDataList[i].month1).toFixed(0));
+        fourYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2).toFixed(0));
+        fourYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3).toFixed(0));
+        fourYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4).toFixed(0));
+        fourYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5).toFixed(0));
+        fourYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6).toFixed(0));
+        fourYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6+budgetOrHistDataList[i].month7).toFixed(0));
+        fourYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6+budgetOrHistDataList[i].month7+budgetOrHistDataList[i].month8).toFixed(0));
+        fourYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6+budgetOrHistDataList[i].month7+budgetOrHistDataList[i].month8+budgetOrHistDataList[i].month9).toFixed(0));
+        fourYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6+budgetOrHistDataList[i].month7+budgetOrHistDataList[i].month8+budgetOrHistDataList[i].month9+budgetOrHistDataList[i].month10).toFixed(0));
+        fourYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6+budgetOrHistDataList[i].month7+budgetOrHistDataList[i].month8+budgetOrHistDataList[i].month9+budgetOrHistDataList[i].month10+budgetOrHistDataList[i].month11).toFixed(0));
+        fourYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6+budgetOrHistDataList[i].month7+budgetOrHistDataList[i].month8+budgetOrHistDataList[i].month9+budgetOrHistDataList[i].month10+budgetOrHistDataList[i].month11+budgetOrHistDataList[i].month12).toFixed(0));
+      }
+      if(i===6){
+        fourYear.push(0);
+        fiveYear.push((0+budgetOrHistDataList[i].month1).toFixed(0));
+        fiveYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2).toFixed(0));
+        fiveYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3).toFixed(0));
+        fiveYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4).toFixed(0));
+        fiveYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5).toFixed(0));
+        fiveYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6).toFixed(0));
+        fiveYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6+budgetOrHistDataList[i].month7).toFixed(0));
+        fiveYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6+budgetOrHistDataList[i].month7+budgetOrHistDataList[i].month8).toFixed(0));
+        fiveYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6+budgetOrHistDataList[i].month7+budgetOrHistDataList[i].month8+budgetOrHistDataList[i].month9).toFixed(0));
+        fiveYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6+budgetOrHistDataList[i].month7+budgetOrHistDataList[i].month8+budgetOrHistDataList[i].month9+budgetOrHistDataList[i].month10).toFixed(0));
+        fiveYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6+budgetOrHistDataList[i].month7+budgetOrHistDataList[i].month8+budgetOrHistDataList[i].month9+budgetOrHistDataList[i].month10+budgetOrHistDataList[i].month11).toFixed(0));
+        fiveYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6+budgetOrHistDataList[i].month7+budgetOrHistDataList[i].month8+budgetOrHistDataList[i].month9+budgetOrHistDataList[i].month10+budgetOrHistDataList[i].month11+budgetOrHistDataList[i].month12).toFixed(0));
+      }
+     
     }
 
     let displayChart;
@@ -760,22 +846,23 @@ class MonthlyPerformance extends Component<MonthlyPerformanceProps>{
       }
     }
 
-    // 三年営業データ
+    // 五年営業データ
     // @ts-ignore
+    const {budgetOrhistorical,year} = this.state;
     if(!this.state.budgetOrhistorical) {
-      // 三年営業データ:ヒストグラム
+      // 五年営業データ:ヒストグラム
       // @ts-ignore
         if (this.state.typIndex===0) {
           displayChart = (
-            <HistoricalComparison legendData={legendDataHist} thisYear={thisYear}  lastYear={lastYear} beforeLastYear={beforeLastYear}  title=''/>
+            <HistoricalComparison legendData={legendDataHist} thisYear={thisYear}  lastYear={lastYear} beforeLastYear={beforeLastYear} fourYear={fourYear} fiveYear={fiveYear} year={year} title=''/>
           )
         } else {
-          // 三年営業データ:線図
+          // 五年営業データ:線図
           // @ts-ignore
           // eslint-disable-next-line no-lonely-if
           if (this.state.typIndex===1) {
             displayChart = (
-              <HistoricalComparisonLine legendData={legendDataHist} thisYear={thisYearLine} lastYear={lastYearLine} beforeLastYear={beforeLastYearLine} title=''/>
+              <HistoricalComparisonLine legendData={legendDataHist} thisYear={thisYearLine} lastYear={lastYearLine} beforeLastYear={beforeLastYearLine} fourYear={fourYear} fiveYear={fiveYear} year={year} title=''/>
             )
           }
       }
@@ -788,13 +875,13 @@ class MonthlyPerformance extends Component<MonthlyPerformanceProps>{
 
         <div className='text-top'>
           <Row>
-            <Col><span id='Budget' className='budget-span'>{formatMessage({ id: 'homepage.basic.Budget' })}</span></Col>
-            <Col><Switch
-              // @ts-ignore
-              id='switch' className='switch-span' style={{background:"#7ECBEE"}}
-              // @ts-ignore
-              onChange={this.switchOnChange}/></Col>
-            <Col><span id='Historical' className='historical-span' >{formatMessage({ id: 'homepage.basic.Historical' })}</span></Col>
+            <Radio.Group defaultValue="a" buttonStyle="solid" onChange={(e) => this.handleRadioChange(e.target.value)}>
+              <Radio.Button value="1">{formatMessage({ id: 'homepage.basic.Budget' })}</Radio.Button>
+              <Radio.Button value="2">{formatMessage({ id: 'homepage.basic.twoYearComparison' })}</Radio.Button>
+              <Radio.Button value="3">{formatMessage({ id: 'homepage.basic.threeYearComparison' })}</Radio.Button>
+              <Radio.Button value="4">{formatMessage({ id: 'homepage.basic.fourYearComparison' })}</Radio.Button>
+              <Radio.Button value="5">{formatMessage({ id: 'homepage.basic.fiveYearComparison' })}</Radio.Button>
+            </Radio.Group>
           </Row>
         </div>
       </div>
