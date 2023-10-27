@@ -34,9 +34,7 @@ class HistoricalComparisonLine extends Component<HistoricalComparisonLineProps>{
     const title4 =legendData[4].replace(/([^:]+)$/, '').replace(":","");
     const title3 =legendData[3].replace(/([^:]+)$/, '').replace(":","");
     const title2 =legendData[2].replace(/([^:]+)$/, '').replace(":","");
-
     const title1 =legendData[1].replace(/([^:]+)$/, '').replace(":","");
-
     const title0 =legendData[0].replace(/([^:]+)$/, '').replace(":","");
 
 
@@ -94,7 +92,7 @@ class HistoricalComparisonLine extends Component<HistoricalComparisonLineProps>{
     let seriesData =  [
       {
       name: title4,
-      data: fourYear,
+      data: fiveYear,
       type: 'line',
       color: '#33ffcc',
       // color: '#A3C4D9',
@@ -114,14 +112,14 @@ class HistoricalComparisonLine extends Component<HistoricalComparisonLineProps>{
             // eslint-disable-next-line @typescript-eslint/no-use-before-define
             let datavalue = series[params.seriesIndex].data[12];
             // eslint-disable-next-line no-use-before-define,@typescript-eslint/no-use-before-define
-            return `${title2}:${ formatNum(datavalue)}`;
+            return `${title4}:${ formatNum(datavalue)}`;
           }
         }
       }
     },
       {
       name: title3,
-      data: fiveYear,
+      data: fourYear,
       type: 'line',
       color: '#39C5BB',
       // color: '#A3C4D9',
@@ -141,7 +139,7 @@ class HistoricalComparisonLine extends Component<HistoricalComparisonLineProps>{
             // eslint-disable-next-line @typescript-eslint/no-use-before-define
             let datavalue = series[params.seriesIndex].data[12];
             // eslint-disable-next-line no-use-before-define,@typescript-eslint/no-use-before-define
-            return `${title2}:${ formatNum(datavalue)}`;
+            return `${title3}:${ formatNum(datavalue)}`;
           }
         }
       }

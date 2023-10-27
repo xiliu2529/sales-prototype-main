@@ -30,7 +30,7 @@ class HistoricalComparison extends Component<HistoricalComparisonProps>{
   }
 */
   getOption = ( legendData: any, thisYear: any, lastYear: any, beforeLastYear: any,fourYear :any,fiveYear:any,year:any)=>{
-      console.log("year2222",year);
+
     const title4 =legendData[4].replace(/([^:]+)$/, '').replace(":","");
     const title3 =legendData[3].replace(/([^:]+)$/, '').replace(":","");
     const title2 =legendData[2].replace(/([^:]+)$/, '').replace(":","");
@@ -108,10 +108,10 @@ class HistoricalComparison extends Component<HistoricalComparisonProps>{
                 // eslint-disable-next-line no-plusplus
                 for (let i = 0; i < 12; i++) {
                   // eslint-disable-next-line @typescript-eslint/no-use-before-define
-                  datavalue += parseFloat(series[series.length-4].data[i]);
+                  datavalue += parseFloat(series[series.length-5].data[i]);
                 }
                 // eslint-disable-next-line no-use-before-define,@typescript-eslint/no-use-before-define
-                return `${title3}:${ formatNum(datavalue)}`;
+                return `${title4}:${ formatNum(datavalue)}`;
               }
             }
           },

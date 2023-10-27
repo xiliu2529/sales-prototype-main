@@ -710,6 +710,8 @@ class MonthlyPerformance extends Component<MonthlyPerformanceProps>{
     const thisYearLine:any[]=[];
     const lastYearLine:any[]=[];
     const beforeLastYearLine:any[]=[];
+    const fourYearLine:any[]=[];
+    const fiveYearLine:any[]=[];
 
     // @ts-ignore
     // eslint-disable-next-line no-plusplus
@@ -791,34 +793,34 @@ class MonthlyPerformance extends Component<MonthlyPerformanceProps>{
         beforeLastYearLine.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6+budgetOrHistDataList[i].month7+budgetOrHistDataList[i].month8+budgetOrHistDataList[i].month9+budgetOrHistDataList[i].month10+budgetOrHistDataList[i].month11+budgetOrHistDataList[i].month12).toFixed(0));
       }
       if(i===5){
-        fourYear.push(0);
-        fourYear.push((0+budgetOrHistDataList[i].month1).toFixed(0));
-        fourYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2).toFixed(0));
-        fourYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3).toFixed(0));
-        fourYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4).toFixed(0));
-        fourYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5).toFixed(0));
-        fourYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6).toFixed(0));
-        fourYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6+budgetOrHistDataList[i].month7).toFixed(0));
-        fourYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6+budgetOrHistDataList[i].month7+budgetOrHistDataList[i].month8).toFixed(0));
-        fourYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6+budgetOrHistDataList[i].month7+budgetOrHistDataList[i].month8+budgetOrHistDataList[i].month9).toFixed(0));
-        fourYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6+budgetOrHistDataList[i].month7+budgetOrHistDataList[i].month8+budgetOrHistDataList[i].month9+budgetOrHistDataList[i].month10).toFixed(0));
-        fourYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6+budgetOrHistDataList[i].month7+budgetOrHistDataList[i].month8+budgetOrHistDataList[i].month9+budgetOrHistDataList[i].month10+budgetOrHistDataList[i].month11).toFixed(0));
-        fourYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6+budgetOrHistDataList[i].month7+budgetOrHistDataList[i].month8+budgetOrHistDataList[i].month9+budgetOrHistDataList[i].month10+budgetOrHistDataList[i].month11+budgetOrHistDataList[i].month12).toFixed(0));
+        fourYearLine.push(0);
+        fourYearLine.push((0+budgetOrHistDataList[i].month1).toFixed(0));
+        fourYearLine.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2).toFixed(0));
+        fourYearLine.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3).toFixed(0));
+        fourYearLine.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4).toFixed(0));
+        fourYearLine.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5).toFixed(0));
+        fourYearLine.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6).toFixed(0));
+        fourYearLine.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6+budgetOrHistDataList[i].month7).toFixed(0));
+        fourYearLine.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6+budgetOrHistDataList[i].month7+budgetOrHistDataList[i].month8).toFixed(0));
+        fourYearLine.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6+budgetOrHistDataList[i].month7+budgetOrHistDataList[i].month8+budgetOrHistDataList[i].month9).toFixed(0));
+        fourYearLine.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6+budgetOrHistDataList[i].month7+budgetOrHistDataList[i].month8+budgetOrHistDataList[i].month9+budgetOrHistDataList[i].month10).toFixed(0));
+        fourYearLine.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6+budgetOrHistDataList[i].month7+budgetOrHistDataList[i].month8+budgetOrHistDataList[i].month9+budgetOrHistDataList[i].month10+budgetOrHistDataList[i].month11).toFixed(0));
+        fourYearLine.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6+budgetOrHistDataList[i].month7+budgetOrHistDataList[i].month8+budgetOrHistDataList[i].month9+budgetOrHistDataList[i].month10+budgetOrHistDataList[i].month11+budgetOrHistDataList[i].month12).toFixed(0));
       }
       if(i===6){
-        fourYear.push(0);
-        fiveYear.push((0+budgetOrHistDataList[i].month1).toFixed(0));
-        fiveYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2).toFixed(0));
-        fiveYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3).toFixed(0));
-        fiveYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4).toFixed(0));
-        fiveYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5).toFixed(0));
-        fiveYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6).toFixed(0));
-        fiveYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6+budgetOrHistDataList[i].month7).toFixed(0));
-        fiveYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6+budgetOrHistDataList[i].month7+budgetOrHistDataList[i].month8).toFixed(0));
-        fiveYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6+budgetOrHistDataList[i].month7+budgetOrHistDataList[i].month8+budgetOrHistDataList[i].month9).toFixed(0));
-        fiveYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6+budgetOrHistDataList[i].month7+budgetOrHistDataList[i].month8+budgetOrHistDataList[i].month9+budgetOrHistDataList[i].month10).toFixed(0));
-        fiveYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6+budgetOrHistDataList[i].month7+budgetOrHistDataList[i].month8+budgetOrHistDataList[i].month9+budgetOrHistDataList[i].month10+budgetOrHistDataList[i].month11).toFixed(0));
-        fiveYear.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6+budgetOrHistDataList[i].month7+budgetOrHistDataList[i].month8+budgetOrHistDataList[i].month9+budgetOrHistDataList[i].month10+budgetOrHistDataList[i].month11+budgetOrHistDataList[i].month12).toFixed(0));
+        fiveYearLine.push(0);
+        fiveYearLine.push((0+budgetOrHistDataList[i].month1).toFixed(0));
+        fiveYearLine.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2).toFixed(0));
+        fiveYearLine.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3).toFixed(0));
+        fiveYearLine.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4).toFixed(0));
+        fiveYearLine.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5).toFixed(0));
+        fiveYearLine.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6).toFixed(0));
+        fiveYearLine.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6+budgetOrHistDataList[i].month7).toFixed(0));
+        fiveYearLine.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6+budgetOrHistDataList[i].month7+budgetOrHistDataList[i].month8).toFixed(0));
+        fiveYearLine.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6+budgetOrHistDataList[i].month7+budgetOrHistDataList[i].month8+budgetOrHistDataList[i].month9).toFixed(0));
+        fiveYearLine.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6+budgetOrHistDataList[i].month7+budgetOrHistDataList[i].month8+budgetOrHistDataList[i].month9+budgetOrHistDataList[i].month10).toFixed(0));
+        fiveYearLine.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6+budgetOrHistDataList[i].month7+budgetOrHistDataList[i].month8+budgetOrHistDataList[i].month9+budgetOrHistDataList[i].month10+budgetOrHistDataList[i].month11).toFixed(0));
+        fiveYearLine.push((budgetOrHistDataList[i].month1+budgetOrHistDataList[i].month2+budgetOrHistDataList[i].month3+budgetOrHistDataList[i].month4+budgetOrHistDataList[i].month5+budgetOrHistDataList[i].month6+budgetOrHistDataList[i].month7+budgetOrHistDataList[i].month8+budgetOrHistDataList[i].month9+budgetOrHistDataList[i].month10+budgetOrHistDataList[i].month11+budgetOrHistDataList[i].month12).toFixed(0));
       }
      
     }
@@ -862,7 +864,7 @@ class MonthlyPerformance extends Component<MonthlyPerformanceProps>{
           // eslint-disable-next-line no-lonely-if
           if (this.state.typIndex===1) {
             displayChart = (
-              <HistoricalComparisonLine legendData={legendDataHist} thisYear={thisYearLine} lastYear={lastYearLine} beforeLastYear={beforeLastYearLine} fourYear={fourYear} fiveYear={fiveYear} year={year} title=''/>
+              <HistoricalComparisonLine legendData={legendDataHist} thisYear={thisYearLine} lastYear={lastYearLine} beforeLastYear={beforeLastYearLine} fourYear={fourYearLine} fiveYear={fiveYearLine} year={year} title=''/>
             )
           }
       }
