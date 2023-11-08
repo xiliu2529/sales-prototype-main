@@ -187,7 +187,7 @@ class Index extends Component<ReportProps> {
             dispatch({
               type: 'reportData/getFormatHeaderNameData',
               payload: {
-                reportInfoModel
+                reportInfoModel 
               },
             });
           // }
