@@ -14,6 +14,7 @@ export interface HistoricalComparisonLineProps {
   beforeLastYear:[];
   fourYear:[];
   fiveYear:[];
+  year:String;
 }
 
 class HistoricalComparisonLine extends Component<HistoricalComparisonLineProps>{

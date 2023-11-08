@@ -16,6 +16,7 @@ export interface HistoricalComparisonProps {
   beforeLastYear:[];
   fourYear:[];
   fiveYear:[];
+  year:String;
 }
 
 class HistoricalComparison extends Component<HistoricalComparisonProps>{
@@ -30,7 +31,7 @@ class HistoricalComparison extends Component<HistoricalComparisonProps>{
   }
 */
   getOption = ( legendData: any, thisYear: any, lastYear: any, beforeLastYear: any,fourYear :any,fiveYear:any,year:any)=>{
-
+    
     const title4 =legendData[4].replace(/([^:]+)$/, '').replace(":","");
     const title3 =legendData[3].replace(/([^:]+)$/, '').replace(":","");
     const title2 =legendData[2].replace(/([^:]+)$/, '').replace(":","");

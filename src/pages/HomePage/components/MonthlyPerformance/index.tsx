@@ -877,7 +877,7 @@ class MonthlyPerformance extends Component<MonthlyPerformanceProps>{
 
         <div className='text-top'>
           <Row>
-            <Radio.Group defaultValue="a" buttonStyle="solid" onChange={(e) => this.handleRadioChange(e.target.value)}>
+            <Radio.Group defaultValue="1" buttonStyle="outline" onChange={(e) => this.handleRadioChange(e.target.value)}>
               <Radio.Button value="1">{formatMessage({ id: 'homepage.basic.Budget' })}</Radio.Button>
               <Radio.Button value="2">{formatMessage({ id: 'homepage.basic.twoYearComparison' })}</Radio.Button>
               <Radio.Button value="3">{formatMessage({ id: 'homepage.basic.threeYearComparison' })}</Radio.Button>
